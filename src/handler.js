@@ -1,5 +1,3 @@
-
-
 function getBnkMembers() {
   return [
     {
@@ -15,7 +13,7 @@ function getBnkMembers() {
   ];
 }
 
-const getMembers = (event, context, callback) => {
+module.exports.bnk = (event, context, callback) => {
   const members = getBnkMembers();
   const response = {
     statusCode: 200,
@@ -24,6 +22,4 @@ const getMembers = (event, context, callback) => {
 
   callback(null, response);
 };
-
-export default getMembers;
 
