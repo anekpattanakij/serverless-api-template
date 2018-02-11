@@ -1,39 +1,30 @@
 {
-    "parser": "babel-eslint",
-    "extends": [
-      "airbnb",
-      "plugin:lodash-fp/recommended"
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:lodash-fp/recommended"
+  ],
+  "plugins": [
+    "import",
+    "lodash-fp",
+    "flowtype"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "rules": {
+    "global-require": 0,
+    "no-underscore-dangle": 0,
+    "no-console": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
     ],
-    "plugins": [
-      "react",
-      "jsx-a11y",
-      "import",
-      "lodash-fp"
-    ],
-    "env": {
-      "browser": true,
-      "node": true,
-      "jest": true,
-      "es6": true
-    },
-    "rules": {
-      "global-require": 0,
-      "no-underscore-dangle": 0,
-      "no-console": 0,
-      "jsx-a11y/anchor-is-valid": [
-        "error",
-        {
-          "specialLink": [
-            "to"
-          ]
-        }
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true
-        }
-      ],
-      "function-paren-newline": 0
-    }
+    "function-paren-newline": 0
   }
+}

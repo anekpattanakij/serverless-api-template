@@ -1,26 +1,28 @@
 const path = require('path');
+const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
-const slsw = require('serverless-webpack');
 
 module.exports = {
-  entry: slsw.lib.entries,
-  target: 'node',
-  externals: [nodeExternals()],
+  entry: './src/bnkService.js',
   output: {
     libraryTarget: 'commonjs',
-    path: path.join(__dirname, '.webpack'),
-    filename: '[name].js'
+    path: path.join(__dirname, './.webpack'),
+    filename: 'src/bnkService.js',
   },
+  target: 'node',
+  externals: [
+    nodeExternals(),
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  devtool: 'source-map',
   module: {
-    rules: [
+    loaders: [
       {
-        test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader'
-          }
-        ],
-      }
-    ]
-  }
+        test: /\.jsx?$/,
+        loader: 'babel-loader'
+      },
+    ],
+  },
 };

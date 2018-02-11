@@ -52,6 +52,7 @@ provider:
 #    variable1: value1
 
 custom:
+  webpack: ./webpack.config.js
   webpackIncludeModules: true
   # enable auto including modules
   # You also can forcefully include or exclude modules by defining it this way.
